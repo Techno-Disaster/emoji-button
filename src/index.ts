@@ -739,3 +739,5 @@ export class EmojiButton {
     }
   }
 }
+
+window.EmojiButton = EmojiButton;
