@@ -739,5 +739,10 @@ export class EmojiButton {
     }
   }
 }
+declare global {
+  interface Window {
+    EmojiButton: any;
+  }
+}
 
 window.EmojiButton = EmojiButton;
