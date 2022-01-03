@@ -1,5 +1,6 @@
 import { TinyEmitter as Emitter } from 'tiny-emitter';
 
+import escape from 'escape-html';
 import twemoji from 'twemoji';
 
 import { SHOW_PREVIEW, HIDE_PREVIEW } from './events';
@@ -40,13 +41,15 @@ export class EmojiPreview {
     let content = emoji.emoji;
 
     if (emoji.custom) {
-      content = `<img class="${CLASS_CUSTOM_EMOJI}" src="${emoji.emoji}">`;
+      content = `<img class="${CLASS_CUSTOM_EMOJI}" src="${escape(
+        emoji.emoji
+      )}">`;
     } else if (this.options.style === 'twemoji') {
       content = twemoji.parse(emoji.emoji, this.options.twemojiOptions);
     }
 
     this.emoji.innerHTML = content;
-    this.name.innerHTML = emoji.name;
+    this.name.innerHTML = escape(emoji.name);
   }
 
   hidePreview(): void {

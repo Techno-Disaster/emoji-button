@@ -48,7 +48,7 @@ const STYLE_TWEMOJI = 'twemoji';
 
 const DEFAULT_OPTIONS: EmojiButtonOptions = {
   position: 'auto',
-  autoHide: false,
+  autoHide: true,
   autoFocusSearch: true,
   showAnimation: true,
   showPreview: true,
